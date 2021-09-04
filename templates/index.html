@@ -1,9 +1,82 @@
 {% extends "base.html" %}
 
 {% block head %}
+	<link rel="stylesheet" href="{{url_for('static', filename='css/index.css') }}">
 	<title>Etudiants takerboustois | Accueil</title>
 {% endblock %}
 
 {% block content %}
-	<h1>Hello dinna</h1>
+	<header>
+		<nav class="navbar navbar-expand-lg fixed-top">
+			<div class="container">
+			  <a class="navbar-brand" href="#">Takerboust</a>
+			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+				<ul class="navbar-nav">
+				  <li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="#">Accueil</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="#">Formulaire</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="#">Staitstiques</a>
+				  </li>
+				</ul>
+			  </div>
+			</div>
+		  </nav>
+	</header>
+	<body>
+		<div class="header">
+			<div class="container pt-5">
+				<div class="row align-items-center justify-content-center">
+					<div class="col-md-6">
+						<h1>Bienvenue cher étudiant takerboustois</h1>
+						<p>
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis ducimus, corrupti ipsam cumque accusantium ipsum dolorem ullam a voluptate iusto amet temporibus 
+						</p>
+						
+						<button class="btn btn-outline-primary mt-4 btn-join">Nous rejoindre</button>
+					</div>
+					<div class="col-md-6">
+						<img src="{{url_for('static', filename='assets/headerimg.jpg')}}" class="header_image">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container mt-5">
+			<h2 class="text-center">Notre communauté en chiffres</h2>
+			<div class="row mt-5 justify-content-center align-items-center">
+				<div class="col-md-3">
+					<div class="card text-center">
+						<div class="card-body">
+							<img class="card-icon" src="https://img.icons8.com/ios-glyphs/100/000000/graduation-cap--v1.png"/>
+							<h5 class="card-title">+200 étudiants</h5>
+						</div>
+					  </div>
+				</div>
+				<div class="col-md-3">
+					<div class="card text-center">
+						<div class="card-body">
+							<img class="card-icon" src="https://img.icons8.com/ios-filled/100/000000/engineer.png"/>
+							<h5 class="card-title">+50 ingénieurs</h5>
+						</div>
+					  </div>
+				</div>
+				<div class="col-md-3">
+					<div class="card text-center">
+						<div class="card-body">
+							<img class="card-icon" src="https://img.icons8.com/ios-glyphs/100/000000/group.png"/>
+							<h5 class="card-title">+10 associations</h5>
+						</div>
+					  </div>
+				</div>
+			</div>
+		</div>
+	</body>
 {% endblock %}
+

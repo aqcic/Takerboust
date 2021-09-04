@@ -1,0 +1,39 @@
+.navbar{
+    background-color: #fff;
+    border-bottom: 1px solid #f7f4f5;
+}
+.navbar-brand {
+    color: rgb(58, 58, 58);
+}
+.nav-item a{
+    color: rgb(104, 102, 102);
+}
+
+.navbar-brand:hover, .nav-item a:hover{
+    color: #a83268;
+}
+.header{
+    margin-top: 4rem;
+}
+
+.header_image{
+    height: 40%;
+    width: 100%;
+}
+
+.btn-join{
+    border-color: #a83268;
+    color: #a83268;
+}
+
+.btn-join:hover{
+    border-color: #a83268;
+    color: #fff;
+    background-color: #a83268;
+}
+.card{
+    border: 1px solid #a83268;
+}
+.card:hover{
+    background-color: #a83268;
+}
