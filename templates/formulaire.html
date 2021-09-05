@@ -1,9 +1,28 @@
 {% extends 'base.html' %}
 
 {% block head %}
-    <title>Formulaire étudiant</title>
+    <title>Formulaire d'Inscription</title>
 {% endblock %}
 
 {% block body %}
-
+	<h1>Inscription</h1>
+	<h2>Êtes-vous un ?</h2>
+	<div class="row mt-5 justify-content-center align-items-center">
+		<div class="col-md-3">
+			<div class="card text-center">
+				<div class="card-body">
+					<img class="card-icon" src="https://img.icons8.com/ios-glyphs/100/000000/graduation-cap--v1.png"/>
+					<h5 class="card-title">Un étudiant</h5>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="card text-center">
+				<div class="card-body">
+					<img class="card-icon" src="https://img.icons8.com/ios-filled/100/000000/engineer.png"/>
+					<h5 class="card-title">Un Salarié</h5>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}
