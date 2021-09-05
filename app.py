@@ -10,6 +10,10 @@ db = SQLAlchemy(app)
 def index():
     return render_template('index.html')
 
+@app.route('/addone')
+def addone():
+    return render_template('addOne.html')
+
 @app.route('/addStudent', methods=['POST', 'GET'])
 def create_student():
     if request.method == 'POST':
