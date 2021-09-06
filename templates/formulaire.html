@@ -2,50 +2,51 @@
 
 {% block head %}
 	<link rel="stylesheet" href="{{url_for('static', filename='css/formulaire.css')}}">
+	<script src="{{url_for('static', filename='js/formulaire.js')}}"></script>
     <title>Formulaire d'Inscription</title>
 {% endblock %}
 
 {% block content %}
 	<div class="container mt-5 pt-5">
-		<h1 class="text-center">Inscription</h1>
 		<h2 class="text-center">Êtes-vous un ?</h2>
-		<div class="row mt-5 justify-content-center align-items-center">
+		<div class="row mt-3 justify-content-center align-items-center">
 			<div class="col-md-3">
-				<div class="card text-center">
+				<div class="card card-active" id="studentCard" onclick="loadStudentForm()">
 					<div class="card-body">
-						<img class="card-icon" src="https://img.icons8.com/ios-glyphs/100/000000/graduation-cap--v1.png"/>
+						<img class="card-icon" src="https://img.icons8.com/ios-glyphs/50/000000/graduation-cap--v1.png"/>
 						<h5 class="card-title">Un étudiant</h5>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-3">
-				<div class="card text-center">
+				<div class="card" id="employeCard" onclick="loadEmployeForm()">
 					<div class="card-body">
-						<img class="card-icon" src="https://img.icons8.com/ios-filled/100/000000/engineer.png"/>
+						<img class="card-icon" src="https://img.icons8.com/ios-filled/50/000000/engineer.png"/>
 						<h5 class="card-title">Un Salarié</h5>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="container mt-5">
+	<div class="container mt-4">
+		<p class="text-center text-muted">Tous les champs sont obligatoires</p>
 		<form method="POST" action="">
-			<div class="row justify-content-center">
-			  <div class="form-group col-md-4">
+			<div class="row justify-content-center mt-3">
+			  <div class="form-group col-md-3">
 				<label for="nom">Nom: </label>
 				<input type="text" class="form-control" name="nom">
 			  </div>
-			  <div class="form-group col-md-4">
+			  <div class="form-group col-md-3">
 				<label for="prenom">Prénom: </label>
 				<input type="text" class="form-control" name="prenom">
 			  </div>
 			</div>
-			<div class="row justify-content-center">
-			  <div class="form-group col-md-4">
+			<div class="row justify-content-center mt-3">
+			  <div class="form-group col-md-3">
 				<label for="dn">Date de naissance:</label>
 				<input type="date" name="date_naissance" class="form-control" >
 			  </div>
-			  <div class="form-group col-md-4">
+			  <div class="form-group col-md-3">
 					<label for="niveauetu">Cycle d'étude:</label>
 					<select name="niveau_etude" id="nivetu" class="form-control">
 						<option value="licence">Licence</option>
@@ -54,8 +55,8 @@
 					</select>
 			  </div>
 			</div>
-			  <div class="row justify-content-center">
-				  <div class="form-group col-md-4">
+			  <div class="row justify-content-center mt-3">
+				  <div class="form-group col-md-3">
 					<label for="annee">Année d'étude:</label>
 					<select name="annee_etude" id="annetu" class="form-control">
 						  <option value="1">1</option>
@@ -63,21 +64,21 @@
 						  <option value="3">3</option>
 					</select>
 				  </div>
-				  <div class="form-group col-md-4">
+				  <div class="form-group col-md-3">
 					<label for="univ">Université: </label>
 					<input type="text" class="form-control" name="universite" >
 				</div>
 				  
 			  </div>
-				<div class="row justify-content-center align-items-center">				  
-					<div class="form-group col-md-4">
+				<div class="row justify-content-center align-items-center mt-3">				  
+					<div class="form-group col-md-3">
 						<label for="specialite">Spécialité:</label>
 						<select name="specialite" id="specialite" class="form-control">
 								<option value=""></option>
 						</select>
 					</div>
-					<div class="form-group col-md-4">
-						<button type="submit" class="btn btn-primary">Envoyer</button>
+					<div class="form-group col-md-3 pt-4">
+						<button type="submit" class="btn btn-primary send-btn">Envoyer</button>
 					</div>
 				</div>
 		  </form>

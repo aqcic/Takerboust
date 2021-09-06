@@ -1,4 +1,47 @@
+.card-body{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
 .card:hover{
     background-color: #a83268;
+    transition: background-color 0.5s ease;
     cursor: pointer;
+}
+
+.card-active{
+    background-color: #a83268;
+    color: #fff;
+}
+
+.form-control{
+    border-radius: 3px;
+    height: 50px;
+    margin-top: -10px;
+    color: gray;
+    outline: none;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.form-control:focus{
+    border-color: #a83268 !important;
+}
+
+form label{
+    background-color: #fff;
+}
+
+.send-btn{
+    background-color: #a83268;
+    border: 1px solid #a83268;
+}
+
+.send-btn:hover{
+    background-color: #8332a8;
+    border-color: #8332a8;
 }
