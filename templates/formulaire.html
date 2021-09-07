@@ -30,7 +30,7 @@
 	</div>
 	<div class="container mt-4">
 		<p class="text-center text-muted">Tous les champs sont obligatoires</p>
-		<form method="POST" action="">
+		<form id="studentForm" class="" method="POST" action="/addStudent">
 			<div class="row justify-content-center mt-3">
 			  <div class="form-group col-md-3">
 				<label for="nom">Nom: </label>
@@ -47,40 +47,117 @@
 				<input type="date" name="date_naissance" class="form-control" >
 			  </div>
 			  <div class="form-group col-md-3">
-					<label for="niveauetu">Cycle d'étude:</label>
-					<select name="niveau_etude" id="nivetu" class="form-control">
-						<option value="licence">Licence</option>
-						<option value="master">Master</option>
-						<option value="doctorat">Doctorat</option>
-					</select>
+				<label for="sexe">Sexe:</label>
+				<select name="sexe" id="sexe" class="form-control">
+					<option value="male">male</option>
+					<option value="femelle">Femelle</option>
+				</select>
 			  </div>
 			</div>
-			  <div class="row justify-content-center mt-3">
-				  <div class="form-group col-md-3">
-					<label for="annee">Année d'étude:</label>
-					<select name="annee_etude" id="annetu" class="form-control">
-						  <option value="1">1</option>
-						  <option value="2">2</option>
-						  <option value="3">3</option>
-					</select>
-				  </div>
-				  <div class="form-group col-md-3">
-					<label for="univ">Université: </label>
-					<input type="text" class="form-control" name="universite" >
+			  	<div class="row justify-content-center mt-3">
+					<div class="form-group col-md-3">
+						<label for="pays">Résidence:</label>
+							<select name="pays" id="pays" class="form-control">
+								{% for country in countries %}
+									<option value={{country}}>{{country}}</option>
+								{% endfor %}
+							</select>
+					</div>
+					<div class="form-group col-md-3">
+						<label for="univ">Université: </label>
+						<input type="text" class="form-control" name="universite" >
+					</div>
 				</div>
-				  
-			  </div>
 				<div class="row justify-content-center align-items-center mt-3">				  
+					<div class="form-group col-md-3">
+						<label for="niveauetu">Niveau d'étude:</label>
+						<select name="niveau_etude" id="nivetu" class="form-control">
+							<option value="l1">L1</option>
+							<option value="l2">L2</option>
+							<option value="l3">L3</option>
+							<option value="m1">M1</option>
+							<option value="m2">M2</option>
+							<option value="doctorat">Doctorat</option>
+						</select>
+					</div>
 					<div class="form-group col-md-3">
 						<label for="specialite">Spécialité:</label>
 						<select name="specialite" id="specialite" class="form-control">
 								<option value=""></option>
 						</select>
 					</div>
-					<div class="form-group col-md-3 pt-4">
+				</div>
+				<div class="row justify-content-center text-center">
+					<div class="form-group col-md-6 pt-4">
 						<button type="submit" class="btn btn-primary send-btn">Envoyer</button>
 					</div>
 				</div>
+				
+		  </form>
+
+		  <form id="employeForm" class="hide-form" method="POST" action="/addEmploye">
+			<div class="row justify-content-center mt-3">
+			  <div class="form-group col-md-3">
+				<label for="nom">Nommmmm: </label>
+				<input type="text" class="form-control" name="nom">
+			  </div>
+			  <div class="form-group col-md-3">
+				<label for="prenom">Prénom: </label>
+				<input type="text" class="form-control" name="prenom">
+			  </div>
+			</div>
+			<div class="row justify-content-center mt-3">
+			  <div class="form-group col-md-3">
+				<label for="dn">Date de naissance:</label>
+				<input type="date" name="date_naissance" class="form-control" >
+			  </div>
+			  <div class="form-group col-md-3">
+				<label for="sexe">Sexe:</label>
+				<select name="sexe" id="sexe" class="form-control">
+					<option value="male">male</option>
+					<option value="femelle">Femelle</option>
+				</select>
+			  </div>
+			</div>
+			  	<div class="row justify-content-center mt-3">
+					<div class="form-group col-md-3">
+						<label for="pays">Résidence:</label>
+							<select name="pays" id="pays" class="form-control">
+								{% for country in countries %}
+									<option value={{country}}>{{country}}</option>
+								{% endfor %}
+							</select>
+					</div>
+					<div class="form-group col-md-3">
+						<label for="univ">Université: </label>
+						<input type="text" class="form-control" name="universite" >
+					</div>
+				</div>
+				<div class="row justify-content-center align-items-center mt-3">				  
+					<div class="form-group col-md-3">
+						<label for="niveauetu">Niveau d'étude:</label>
+						<select name="niveau_etude" id="nivetu" class="form-control">
+							<option value="l1">L1</option>
+							<option value="l2">L2</option>
+							<option value="l3">L3</option>
+							<option value="m1">M1</option>
+							<option value="m2">M2</option>
+							<option value="doctorat">Doctorat</option>
+						</select>
+					</div>
+					<div class="form-group col-md-3">
+						<label for="specialite">Spécialité:</label>
+						<select name="specialite" id="specialite" class="form-control">
+								<option value=""></option>
+						</select>
+					</div>
+				</div>
+				<div class="row justify-content-center text-center">
+					<div class="form-group col-md-6 pt-4">
+						<button type="submit" class="btn btn-primary send-btn">Envoyer</button>
+					</div>
+				</div>
+				
 		  </form>
 	</div>
 {% endblock %}

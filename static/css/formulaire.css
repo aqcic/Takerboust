@@ -37,11 +37,18 @@ form label{
 }
 
 .send-btn{
+    width: 50%;
+    height: 3rem;
     background-color: #a83268;
     border: 1px solid #a83268;
+    font-weight: bold;
 }
 
 .send-btn:hover{
-    background-color: #8332a8;
-    border-color: #8332a8;
+    background-color: #aa4975;
+    border-color: #aa4975;
+}
+
+.hide-form{
+    display: none;
 }
