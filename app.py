@@ -19,6 +19,18 @@ def index():
 def addone():
     return render_template('addOne.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/org')
+def associations():
+    return render_template('associations.html')
+
+@app.route('/statistics')
+def statistics():
+    return render_template('statistics.html')
+
 @app.route('/addStudent', methods=['POST', 'GET'])
 def create_student():
     universities = get_universities()
