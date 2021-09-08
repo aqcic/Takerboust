@@ -28,8 +28,10 @@
 			</div>
 		</div>
 	</div>
+	
 	<div class="container mt-4">
 		<p class="text-center text-muted">Tous les champs sont obligatoires</p>
+
 		<form id="studentForm" class="" method="POST" action="/addStudent">
 			<div class="row justify-content-center mt-3">
 			  <div class="form-group col-md-3">
@@ -65,7 +67,11 @@
 					</div>
 					<div class="form-group col-md-3">
 						<label for="univ">Université: </label>
-						<input type="text" class="form-control" name="universite" >
+						<select name="universite" id="univ" class="form-control">
+							{% for univ in universities %}
+								<option value="{{univ}}">{{univ}}</option>
+							{% endfor %}
+						</select>
 					</div>
 				</div>
 				<div class="row justify-content-center align-items-center mt-3">				  
@@ -98,7 +104,7 @@
 		  <form id="employeForm" class="hide-form" method="POST" action="/addEmploye">
 			<div class="row justify-content-center mt-3">
 			  <div class="form-group col-md-3">
-				<label for="nom">Nommmmm: </label>
+				<label for="nom">Nom: </label>
 				<input type="text" class="form-control" name="nom">
 			  </div>
 			  <div class="form-group col-md-3">
@@ -129,28 +135,16 @@
 							</select>
 					</div>
 					<div class="form-group col-md-3">
-						<label for="univ">Université: </label>
+						<label for="univ">Fonction: </label>
 						<input type="text" class="form-control" name="universite" >
 					</div>
 				</div>
 				<div class="row justify-content-center align-items-center mt-3">				  
 					<div class="form-group col-md-3">
-						<label for="niveauetu">Niveau d'étude:</label>
-						<select name="niveau_etude" id="nivetu" class="form-control">
-							<option value="l1">L1</option>
-							<option value="l2">L2</option>
-							<option value="l3">L3</option>
-							<option value="m1">M1</option>
-							<option value="m2">M2</option>
-							<option value="doctorat">Doctorat</option>
-						</select>
+						<label for="niveauetu">Années d'expérience:</label>
+						<input class="form-control" type="number" name="experience" id="experience" step="1" min="0" max="60">
 					</div>
-					<div class="form-group col-md-3">
-						<label for="specialite">Spécialité:</label>
-						<select name="specialite" id="specialite" class="form-control">
-								<option value=""></option>
-						</select>
-					</div>
+					<div class="form-group col-md-3"></div>
 				</div>
 				<div class="row justify-content-center text-center">
 					<div class="form-group col-md-6 pt-4">
