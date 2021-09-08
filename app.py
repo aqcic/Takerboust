@@ -1,7 +1,10 @@
+# -*- coding: utf-8 -*-
+
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import requests
 from requests.exceptions import HTTPError
+import os, json
 
 app = Flask(__name__, static_folder='static')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///takerboust.db'
@@ -18,26 +21,28 @@ def addone():
 
 @app.route('/addStudent', methods=['POST', 'GET'])
 def create_student():
-    countries = getCountries()
+    universities = get_universities()
+    countries = get_countries()
     if request.method == 'POST':
         print("student form send")
     
-    return render_template('formulaire.html', countries = countries)
+    return render_template('formulaire.html', countries = countries, universities = universities)
 
 @app.route('/addEmploye', methods=['POST', 'GET'])
 def create_employe():
-    countries = getCountries()
+    universities = get_universities()
+    countries = get_countries()
     if request.method == 'POST':
         print("employe form send")
     
-    return render_template('formulaire.html', countries = countries)
+    return render_template('formulaire.html', countries = countries, universities = universities)
 
 @app.route('/stats')
 def stats():
     return "statistics page"
 
 
-def getCountries():
+def get_countries():
     try:
         data = []
         response = requests.get('https://restcountries.eu/rest/v2/all')
@@ -51,6 +56,13 @@ def getCountries():
     except Exception as err:
         print(f'Other error occured: {err}')
 
+def get_universities():
+    data = []
+    file = open(os.path.join(app.static_folder, "assets/universities.json"), 'r', encoding='utf-8')
+    json_file = json.load(file)
+    for element in json_file:
+        data.append(element["name"])
+    return data
 
 if __name__ == "__main__":
     app.run(debug=True)
