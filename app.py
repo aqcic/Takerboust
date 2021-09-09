@@ -2,15 +2,48 @@
 
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+from jinja2.loaders import PrefixLoader
 import requests
 from requests.exceptions import HTTPError
 import os, json
+from datetime import datetime
 
 app = Flask(__name__, static_folder='static')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///takerboust.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-"""Landing page route"""
+"""Database models"""
+class Student(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    nom = db.Column(db.String(50), nullable=False)
+    prenom = db.Column(db.String(50), nullable=False)
+    date_naissance = db.Column(db.DateTime, nullable=False)
+    sexe = db.Column(db.String(10), nullable=False)
+    pays = db.Column(db.String(30), nullable=False)
+    niveau_etude = db.Column(db.String(10), nullable=False)
+    universite = db.Column(db.String(100), nullable=False)
+    specialite = db.Column(db.String(50), nullable=False)
+
+    def __repr__(self) -> str:
+        return "Student %r" % self.id
+
+class Employe(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    nom = db.Column(db.String(50), nullable=False)
+    prenom = db.Column(db.String(50), nullable=False)
+    date_naissance = db.Column(db.DateTime, nullable=False)
+    sexe = db.Column(db.String(10), nullable=False)
+    pays = db.Column(db.String(30), nullable=False)
+    fonction = db.Column(db.String(30), nullable=False)
+    experience = db.Column(db.Integer, nullable=False)
+
+    def __repr__(self) -> str:
+        return "Employe %r" % self.id
+
+
+
+"""Routes"""
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -36,7 +69,20 @@ def create_student():
     universities = get_universities()
     countries = get_countries()
     if request.method == 'POST':
-        print("student form send")
+        y, m, d = request.form.get('date_naissance').split('-')
+        birthday = datetime(int(y), int(m), int(d))
+        student = Student(
+            nom = request.form.get("nom"),
+            prenom = request.form.get("prenom"),
+            date_naissance = birthday,
+            sexe = request.form.get("sexe"),
+            pays = request.form.get("pays"),
+            universite = request.form.get("universite"),
+            niveau_etude = request.form.get("niveau_etude"),
+            specialite = request.form.get("specialite")
+        )
+        db.session.add(student)
+        db.session.commit()
     
     return render_template('formulaire.html', countries = countries, universities = universities)
 
@@ -45,7 +91,19 @@ def create_employe():
     universities = get_universities()
     countries = get_countries()
     if request.method == 'POST':
-        print("employe form send")
+        y, m, d = request.form.get('date_naissance').split('-')
+        birthday = datetime(int(y), int(m), int(d))
+        employe = Employe(
+            nom = request.form.get("nom"),
+            prenom = request.form.get("prenom"),
+            date_naissance = birthday,
+            sexe = request.form.get("sexe"),
+            pays = request.form.get("pays"),
+            fonction = request.form.get("fonction"),
+            experience = request.form.get("experience")
+        )
+        db.session.add(employe)
+        db.session.commit()
     
     return render_template('formulaire.html', countries = countries, universities = universities)
 
