@@ -34,6 +34,7 @@ class Employe(db.Model):
     prenom = db.Column(db.String(50), nullable=False)
     date_naissance = db.Column(db.DateTime, nullable=False)
     sexe = db.Column(db.String(10), nullable=False)
+    diplome = db.Column(db.String(10), nullable=False)
     pays = db.Column(db.String(30), nullable=False)
     fonction = db.Column(db.String(30), nullable=False)
     experience = db.Column(db.Integer, nullable=False)
@@ -99,6 +100,7 @@ def create_employe():
             date_naissance = birthday,
             sexe = request.form.get("sexe"),
             pays = request.form.get("pays"),
+            diplome = request.form.get("diplome"),
             fonction = request.form.get("fonction"),
             experience = request.form.get("experience")
         )
