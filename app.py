@@ -67,7 +67,7 @@ def statistics():
 def create_student():
     universities = get_universities()
     countries = get_countries()
-    formations = get_formations()
+    formations = get_formations("all")
     if request.method == 'POST':
         y, m, d = request.form.get('date_naissance').split('-')
         birthday = datetime(int(y), int(m), int(d))
@@ -91,7 +91,7 @@ def create_student():
 def create_employe():
     universities = get_universities()
     countries = get_countries()
-    formations = get_formations()
+    formations = get_formations("all")
     if request.method == 'POST':
         y, m, d = request.form.get('date_naissance').split('-')
         birthday = datetime(int(y), int(m), int(d))
@@ -108,11 +108,22 @@ def create_employe():
         db.session.add(employe)
         db.session.commit()
     
-    return render_template('formulaire.html', countries = countries, universities = universities)
+    return render_template('formulaire.html', countries = countries, universities = universities, formations = formations)
 
 @app.route('/stats')
 def stats():
     return "statistics page"
+
+"""Api endpoints"""
+@app.route('/get-formations-by-degree', methods=['POST', 'GET'])
+def get_formations_by_degree():
+    names = {"l1": "Licence 1", "l2": "Licence 2", "l3": "Licence 3", "m1": "Master 1", "m2": "Master 2"}
+    if request.method == "POST":
+        degree = json.loads(request.data)['degree']
+        all_data = get_formations(names[degree])
+        return json.dumps(all_data)
+    
+    return None
 
 
 def get_countries():
@@ -129,14 +140,20 @@ def get_countries():
     except Exception as err:
         print(f'Other error occured: {err}')
 
-def get_formations():
+def get_formations(degree : str):
     data = []
     file = open(os.path.join(app.static_folder, "assets/formations.json"), 'r', encoding='utf-8')
     json_file = json.load(file)
-    for element in json_file:
-        data.append(element["formation"])
-    return data
 
+    if degree == "all":
+        for element in json_file:
+            data.append(element["formation"])
+        return data
+    
+    for element in json_file:
+        if element["degree"] == degree:
+            data.append(element["formation"])
+    return data
 
 
 def get_universities():
@@ -146,6 +163,8 @@ def get_universities():
     for element in json_file:
         data.append(element["name"])
     return data
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
