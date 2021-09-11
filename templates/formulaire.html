@@ -35,18 +35,18 @@
 		<form id="studentForm" class="" method="POST" action="/addStudent">
 			<div class="row justify-content-center mt-3">
 			  <div class="form-group col-md-3">
-				<label for="nom">Nom: </label>
-				<input type="text" class="form-control" name="nom">
+				<label for="nom" required="required">Nom: </label>
+				<input type="text" class="form-control" name="nom" required="required">
 			  </div>
 			  <div class="form-group col-md-3">
 				<label for="prenom">Prénom: </label>
-				<input type="text" class="form-control" name="prenom">
+				<input type="text" class="form-control" name="prenom" required="required">
 			  </div>
 			</div>
 			<div class="row justify-content-center mt-3">
 			  <div class="form-group col-md-3">
 				<label for="dn">Date de naissance:</label>
-				<input type="date" name="date_naissance" class="form-control" >
+				<input type="date" name="date_naissance" class="form-control" required="required">
 			  </div>
 			  <div class="form-group col-md-3">
 				<label for="sexe">Sexe:</label>
@@ -87,9 +87,11 @@
 						</select>
 					</div>
 					<div class="form-group col-md-3">
-						<label for="specialite">Spécialité:</label>
+						<label for="formation">Spécialité:</label>
 						<select name="specialite" id="specialite" class="form-control">
-								<option value="SII">SII</option>
+							{% for formation in formations %}
+								<option value="{{formation}}">{{formation}}</option>
+							{% endfor %}
 						</select>
 					</div>
 				</div>
@@ -105,17 +107,17 @@
 			<div class="row justify-content-center mt-3">
 			  <div class="form-group col-md-3">
 				<label for="nom">Nom: </label>
-				<input type="text" class="form-control" name="nom">
+				<input type="text" class="form-control" name="nom" required="required">
 			  </div>
 			  <div class="form-group col-md-3">
 				<label for="prenom">Prénom: </label>
-				<input type="text" class="form-control" name="prenom">
+				<input type="text" class="form-control" name="prenom" required="required">
 			  </div>
 			</div>
 			<div class="row justify-content-center mt-3">
 			  <div class="form-group col-md-3">
 				<label for="dn">Date de naissance:</label>
-				<input type="date" name="date_naissance" class="form-control" >
+				<input type="date" name="date_naissance" class="form-control" required="required">
 			  </div>
 			  <div class="form-group col-md-3">
 				<label for="sexe">Sexe:</label>
@@ -150,12 +152,12 @@
 				<div class="row justify-content-center align-items-center mt-3">
 					<div class="form-group col-md-3">
 						<label for="fonction">Fonction: </label>
-						<input type="text" class="form-control" name="fonction" >
+						<input type="text" class="form-control" name="fonction" required="required">
 					</div>
 
 					<div class="form-group col-md-3">
 						<label for="experience">Années d'expérience:</label>
-						<input class="form-control" type="number" name="experience" id="experience" step="1" min="0" max="60">
+						<input class="form-control" type="number" name="experience" id="experience" step="1" min="0" max="60"required="required">
 					</div>
 					
 				</div>

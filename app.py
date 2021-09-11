@@ -23,7 +23,7 @@ class Student(db.Model):
     pays = db.Column(db.String(30), nullable=False)
     niveau_etude = db.Column(db.String(10), nullable=False)
     universite = db.Column(db.String(100), nullable=False)
-    specialite = db.Column(db.String(50), nullable=False)
+    formation = db.Column(db.String(50), nullable=False)
 
     def __repr__(self) -> str:
         return "Student %r" % self.id
@@ -69,6 +69,7 @@ def statistics():
 def create_student():
     universities = get_universities()
     countries = get_countries()
+    formations = get_formations()
     if request.method == 'POST':
         y, m, d = request.form.get('date_naissance').split('-')
         birthday = datetime(int(y), int(m), int(d))
@@ -79,18 +80,19 @@ def create_student():
             sexe = request.form.get("sexe"),
             pays = request.form.get("pays"),
             universite = request.form.get("universite"),
+            formation = request.form.get("formation"),
             niveau_etude = request.form.get("niveau_etude"),
-            specialite = request.form.get("specialite")
         )
         db.session.add(student)
         db.session.commit()
     
-    return render_template('formulaire.html', countries = countries, universities = universities)
+    return render_template('formulaire.html', countries = countries, universities = universities, formations = formations)
 
 @app.route('/addEmploye', methods=['POST', 'GET'])
 def create_employe():
     universities = get_universities()
     countries = get_countries()
+    formations = get_formations()
     if request.method == 'POST':
         y, m, d = request.form.get('date_naissance').split('-')
         birthday = datetime(int(y), int(m), int(d))
@@ -127,6 +129,16 @@ def get_countries():
         print(f'Http error occured: {http_err}')
     except Exception as err:
         print(f'Other error occured: {err}')
+
+def get_formations():
+    data = []
+    file = open(os.path.join(app.static_folder, "assets/formations.json"), 'r', encoding='utf-8')
+    json_file = json.load(file)
+    for element in json_file:
+        data.append(element["formation"])
+    return data
+
+
 
 def get_universities():
     data = []
