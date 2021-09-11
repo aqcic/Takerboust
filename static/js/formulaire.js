@@ -20,3 +20,30 @@ const loadEmployeForm = () => {
     studentForm.classList.add("hide-form")
 }
 
+function addEventHandler(elem, eventType, handler) {
+    if (elem.addEventListener)
+        elem.addEventListener (eventType, handler, false);
+    else if (elem.attachEvent)
+        elem.attachEvent ('on' + eventType, handler); 
+}
+
+addEventHandler(document, 'DOMContentLoaded', function() {
+    addEventHandler(document.getElementById('niveau_etude'), 'change', function() {
+        fetch("/get-formations-by-degree", {
+            method: 'POST',
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({degree: document.getElementById("niveau_etude").value}),
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            specialiteSelect = document.getElementById('specialite');
+            specialiteSelect.innerHTML = "";
+            data.forEach(element => {
+                specialiteSelect.options[specialiteSelect.options.length] = new Option(element, element);
+            });
+        })
+    });
+});

@@ -1,109 +1,109 @@
 [
     {
-        "faculté": "Sciences et sciences appliqués",
-        "domaine": "Sciences et technologies",
-        "année": "Licence 1",
+        "faculty": "Sciences et sciences appliqués",
+        "domain": "Sciences et technologies",
+        "degree": "Licence 1",
         "formation": "Sciences et technologies 'ST'"
     },
     {
-        "faculté": "Sciences et sciences appliqués",
-        "domaine": "Sciences et technologies",
-        "année": "Licence 2",
+        "faculty": "Sciences et sciences appliqués",
+        "domain": "Sciences et technologies",
+        "degree": "Licence 2",
         "formation": "Génie mécanique"
     },
   
     {
         
-        "faculté": "Sciences et sciences appliqués",
-        "domaine": "Sciences et technologies",
-        "année": "Licence 2",
+        "faculty": "Sciences et sciences appliqués",
+        "domain": "Sciences et technologies",
+        "degree": "Licence 2",
         "formation": "Génie civile"
         
     },
     {
-        "faculté": "Sciences et sciences appliqués",
-        "domaine": "Sciences et technologies",
-        "année": "Licence 2",
+        "faculty": "Sciences et sciences appliqués",
+        "domain": "Sciences et technologies",
+        "degree": "Licence 2",
         "formation": "Génie de procédés"
         
     },
 
     {
-        "faculté": "Sciences et sciences appliqués",
-        "domaine": "Sciences et technologies",
-        "année": "Licence 2",
+        "faculty": "Sciences et sciences appliqués",
+        "domain": "Sciences et technologies",
+        "degree": "Licence 2",
         "formation": "Génie civile"
     },
 
     { 
-        "faculté": "Sciences et sciences appliqués",
-        "domaine": "Sciences et technologies",
-        "année": "Licence 2",
+        "faculty": "Sciences et sciences appliqués",
+        "domain": "Sciences et technologies",
+        "degree": "Licence 2",
         "formation": "Electronique"
     },
 
     {
         
-        "faculté": "Sciences et sciences appliqués",
-        "domaine": "Sciences et technologies",
-        "année": "Licence 2",
+        "faculty": "Sciences et sciences appliqués",
+        "domain": "Sciences et technologies",
+        "degree": "Licence 2",
         "formation": "Télécommunication" 
     },
 
     {   
-        "faculté": "Sciences et sciences appliqués",
-        "domaine": "Sciences et technologies",
-        "année": "Licence 2",
+        "faculty": "Sciences et sciences appliqués",
+        "domain": "Sciences et technologies",
+        "degree": "Licence 2",
         "formation": "Hydraulique "  
     },
     
     {
-        "faculté": "Sciences et sciences appliqués",
-        "domaine": "Mathématiques et Informatique",
-        "année": "Licence 2",
+        "faculty": "Sciences et sciences appliqués",
+        "domain": "Mathématiques et Informatique",
+        "degree": "Licence 2",
         "formation": "Mathématiques"
     },
 
     {
-        "faculté": "Sciences et sciences appliqués",
-        "domaine": "Mathématiques et Informatique",
-        "année": "Licence 2",
+        "faculty": "Sciences et sciences appliqués",
+        "domain": "Mathématiques et Informatique",
+        "degree": "Licence 2",
         "formation": "Ingénierie des systèmes d’Information et du Logiciel"
         
     },
 
     {
-        "faculté": "Sciences et sciences appliqués",
-        "domaine": "Mathématiques et Informatique",
-        "année": "Licence 2",
+        "faculty": "Sciences et sciences appliqués",
+        "domain": "Mathématiques et Informatique",
+        "degree": "Licence 2",
         "formation": "Systèmes Informatiques" 
     }, 
 
     {
-        "faculté": "Sciences et sciences appliqués",
-        "domaine": "Sciences de la Matière",
-        "année": "Licence 2",
+        "faculty": "Sciences et sciences appliqués",
+        "domain": "Sciences de la Matière",
+        "degree": "Licence 2",
         "formation": "Chimie " 
     },
 
     {
-        "faculté": "Sciences et sciences appliqués",
-        "domaine": "Sciences de la Matière",
-        "année": "Licence 2",
+        "faculty": "Sciences et sciences appliqués",
+        "domain": "Sciences de la Matière",
+        "degree": "Licence 2",
         "formation": "Physique " 
     },
 
     {
-        "faculté": "Sciences et sciences appliqués",
-        "domaine": "Sciences de la Matière",
-        "année": "Licence 3",
+        "faculty": "Sciences et sciences appliqués",
+        "domain": "Sciences de la Matière",
+        "degree": "Licence 3",
         "formation": "Physique Fondamentale" 
     },
     
     {
-        "faculté": "Sciences et sciences appliqués",
-        "domaine": "Sciences de la Matière",
-        "année": "Licence 3",
+        "faculty": "Sciences et sciences appliqués",
+        "domain": "Sciences de la Matière",
+        "degree": "Licence 3",
         "formation": "Chimie Fondamentale" 
     }
 ]
