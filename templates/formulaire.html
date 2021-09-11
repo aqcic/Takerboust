@@ -31,7 +31,7 @@
 	
 	<div class="container mt-4">
 		<p class="text-center text-muted">Tous les champs sont obligatoires</p>
-
+		
 		<form id="studentForm" class="" method="POST" action="/addStudent">
 			<div class="row justify-content-center mt-3">
 			  <div class="form-group col-md-3">
@@ -95,6 +95,17 @@
 						</select>
 					</div>
 				</div>
+				<div class="row justify-content-center mt-3">
+					<div class="form-group col-md-3">
+					  <label for="obtention"> Obtention de diplôme:</label>
+					  <select name="obtention" id="obtention" class="form-control">
+						  <option value="Oui">Obtenu</option>
+						  <option value="non">À obtenir</option>
+						  <option value="abandon">abandonné</option>
+					  </select>
+					</div>
+					
+					<div class="form-group col-md-3"></div>
 				<div class="row justify-content-center text-center">
 					<div class="form-group col-md-6 pt-4">
 						<button type="submit" class="btn btn-primary send-btn">Envoyer</button>
@@ -159,7 +170,6 @@
 						<label for="experience">Années d'expérience:</label>
 						<input class="form-control" type="number" name="experience" id="experience" step="1" min="0" max="60"required="required">
 					</div>
-					
 				</div>
 				<div class="row justify-content-center text-center">
 					<div class="form-group col-md-6 pt-4">

@@ -24,6 +24,7 @@ class Student(db.Model):
     niveau_etude = db.Column(db.String(10), nullable=False)
     universite = db.Column(db.String(100), nullable=False)
     formation = db.Column(db.String(50), nullable=False)
+    obtention = db.Column(db.String(10), nullable=False)
 
     def __repr__(self) -> str:
         return "Student %r" % self.id
@@ -49,9 +50,6 @@ class Employe(db.Model):
 def index():
     return render_template('index.html')
 
-@app.route('/addone')
-def addone():
-    return render_template('addOne.html')
 
 @app.route('/about')
 def about():
@@ -82,6 +80,7 @@ def create_student():
             universite = request.form.get("universite"),
             formation = request.form.get("formation"),
             niveau_etude = request.form.get("niveau_etude"),
+            obtention = request.form.get("obtention")
         )
         db.session.add(student)
         db.session.commit()
