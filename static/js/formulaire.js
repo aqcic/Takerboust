@@ -29,7 +29,7 @@ function addEventHandler(elem, eventType, handler) {
 
 addEventHandler(document, 'DOMContentLoaded', function() {
     addEventHandler(document.getElementById('niveau_etude'), 'change', function() {
-        fetch("/get-formations-by-degree", {
+        fetch("/api/get-formations-by-degree", {
             method: 'POST',
             headers: {
             'Accept': 'application/json',
