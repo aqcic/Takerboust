@@ -115,7 +115,7 @@ def stats():
     return "statistics page"
 
 """Api endpoints"""
-@app.route('/get-formations-by-degree', methods=['POST', 'GET'])
+@app.route('/api/get-formations-by-degree', methods=['POST', 'GET'])
 def get_formations_by_degree():
     names = {"l1": "Licence 1", "l2": "Licence 2", "l3": "Licence 3", "m1": "Master 1", "m2": "Master 2"}
     if request.method == "POST":
