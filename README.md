@@ -34,10 +34,8 @@ pip install -r requirements.txt
 	python app.py
 ```
 ou 
+
 ```
-	flask run
-<<<<<<< HEAD
+flask run
 ```
-=======
-```
->>>>>>> 31af41d7e560ee3ba0d3da803db5ced0a89eebd5
+
