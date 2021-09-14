@@ -27,14 +27,6 @@
         "formation": "Génie de procédés"
         
     },
-
-    {
-        "faculty": "Sciences et sciences appliqués",
-        "domain": "Sciences et technologies",
-        "degree": "Licence 2",
-        "formation": "Génie civile"
-    },
-
     { 
         "faculty": "Sciences et sciences appliqués",
         "domain": "Sciences et technologies",
@@ -68,7 +60,7 @@
         "faculty": "Sciences et sciences appliqués",
         "domain": "Mathématiques et Informatique",
         "degree": "Licence 2",
-        "formation": "Ingénierie des systèmes d’Information et du Logiciel"
+        "formation": "Ingénierie des systèmes d’Informations et des Logiciels"
         
     },
 
@@ -77,6 +69,12 @@
         "domain": "Mathématiques et Informatique",
         "degree": "Licence 2",
         "formation": "Systèmes Informatiques" 
+    },
+    {
+        "faculty": "Sciences et sciences appliqués",
+        "domain": "Mathématiques et Informatique",
+        "degree": "Licence 2",
+        "formation": "Génie des Télécommunications et Réseaux" 
     }, 
 
     {
