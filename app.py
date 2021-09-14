@@ -2,8 +2,7 @@
 
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.sql import exists 
-from jinja2.loaders import PrefixLoader
+from sqlalchemy import func
 import requests
 from requests.exceptions import HTTPError
 import os, json
@@ -79,7 +78,7 @@ def create_student():
             sexe = request.form.get("sexe"),
             pays = request.form.get("pays"),
             universite = request.form.get("universite"),
-            formation = request.form.get("formation"),
+            formation = request.form.get("specialite"),
             niveau_etude = request.form.get("niveau_etude"),
             obtention = request.form.get("obtention")
         )
@@ -125,6 +124,14 @@ def get_formations_by_degree():
         return json.dumps(all_data)
     
     return None
+
+@app.route('/api/students-by-degree', methods=['GET'])
+def students_by_degree():
+    if request.method == "GET":
+        data = db.session.query(Student.niveau_etude, func.count(Student.id)).group_by(Student.niveau_etude).all()
+        print(data)
+    return "hello"
+
 
 
 def get_countries():
