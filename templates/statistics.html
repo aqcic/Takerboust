@@ -1,12 +1,32 @@
 {% extends "base.html" %}
 
 {% block head %}
-	<title>Les étudiants </title>
+	<title>Statistiques</title>
+	<style>
+    	.contentee{
+        	text-align: center;
+			margin-bottom: 80px;
+    	}
+		.charts{
+			width: auto;
+			margin-left: 10%;
+			margin-right: 10%;
+		}
+	</style>
+
 {% endblock %}
 
 {% block content %}
-	<div class="content" style="text-align: center; padding: 200px;">
+	<div class="contentee">
 		<h1>Takerboust everywhere! </h1>
 		<p>une pépinières d'intellectuels, de chercheurs et de futures ingénieurs </p>
 	</div>
+
+	<div id="charts" class="charts">
+		
+		<canvas id="myBar" width="120" height="30"></canvas>
+	</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="{{url_for('static', filename='js/stat.js')}}"></script>
 {% endblock %}

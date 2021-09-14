@@ -2,6 +2,7 @@
 
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.sql import exists 
 from jinja2.loaders import PrefixLoader
 import requests
 from requests.exceptions import HTTPError
