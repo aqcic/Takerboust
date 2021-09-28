@@ -2,31 +2,39 @@
 
 {% block head %}
 	<title>Statistiques</title>
-	<style>
-    	.contentee{
-        	text-align: center;
-			margin-bottom: 80px;
-    	}
-		.charts{
-			width: auto;
-			margin-left: 10%;
-			margin-right: 10%;
-		}
-	</style>
-
+	<link rel="stylesheet" href="{{url_for('static', filename='css/statistics.css')}}">
 {% endblock %}
 
 {% block content %}
-	<div class="contentee">
+	<div class="container text-center">
 		<h1>Takerboust everywhere! </h1>
 		<p>une pépinières d'intellectuels, de chercheurs et de futures ingénieurs </p>
+
+		<div class="row mt-3 justify-content-center align-items-center"></div>
+			<div class="col-md-3" id="student">
+				<div class="card card-active" id="studentCard" onclick="loadStudentForm()">
+					<div class="card-body">
+						<img class="card-icon" src="https://img.icons8.com/ios-glyphs/50/000000/graduation-cap--v1.png"/>
+						<h5 class="card-title">Un étudiant</h5>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3" id="employé">
+				<div class="card" id="employeCard" onclick="loadEmployeForm()">
+					<div class="card-body">
+						<img class="card-icon" src="https://img.icons8.com/ios-filled/50/000000/engineer.png"/>
+						<h5 class="card-title">Un Employé</h5>
+					</div>
+				</div>
+			</div>
+		</div>	
 	</div>
 
-	<div id="charts" class="charts">
+	<div id="charts" class="container">
 		
 		<canvas id="myBar" width="120" height="30"></canvas>
 	</div>
 	
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	<script src="{{url_for('static', filename='js/stat.js')}}"></script>
+	<script src="{{url_for('static', filename='js/statistics.js')}}"></script>
 {% endblock %}

@@ -44,7 +44,10 @@ class Employe(db.Model):
     def __repr__(self) -> str:
         return "Employe %r" % self.id
 
-
+@app.errorhandler(404)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return render_template('_404.html'), 404
 
 """Routes"""
 @app.route('/')

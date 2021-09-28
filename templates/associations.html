@@ -2,12 +2,34 @@
 
 {% block head %}
 	<title>Les étudiants </title>
-	<link rel="stylesheet" href="{{url_for('static', filename='/css/associations.css') }}">
+	<link rel="stylesheet" href="{{url_for('static', filename='css/associations.css')}}">
+	<style>
+		#association {
+		border: dashed 0.2rem black;
+		border-radius: 25px;
+		height: auto;
+		min-height: 150px;
+		margin-top: 40px;
+		}
+		span{
+
+			border: dashed 2px red;
+			margin-top: 20px;
+			float: right;
+			margin-right: 15%;
+			width: 50%;
+			height: auto;
+		}
+	</style>
 {% endblock %}
 
 {% block content %}
-	<div class="content" style="text-align: center; margin-top: 100px;">
+	<div class="container text-center">
 		<h1>Takerboust se mobilise </h1>
 		<p>Plus de 10 associations et organisations dans des différents domaines</p>
+		
+		<div id="association">
+			<span class="title"><h2>Nom de l'association</h2></span>
+		</div>
 	</div>
 {% endblock %}
